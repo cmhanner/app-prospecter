@@ -3,7 +3,7 @@ import "./../css/Navigation.css"
 
 const Navigation = () => {
     return (
-        <nav id = "main-nav">
+        <nav id = "page-changer">
             <ul>
                 <li><Link to = "/">Home</Link></li>
                 <li><Link to = "/Database">Database</Link></li>
