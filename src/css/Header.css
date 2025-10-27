@@ -71,3 +71,77 @@ body {
   box-shadow: 0 2px 5px white;
   /* display: block; */
 }
+
+/*Search Bar*/
+
+#search-bar-part {
+  background-color: var(--secondaryColor);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px white;
+    
+}
+
+#search-bar-part input {
+   width: 300px;
+   font-size: 14px;
+  padding: 5px;
+  border-radius: 5px;
+  
+    
+}
+
+#search-bar-part button {
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+  font-size: 14px;
+  padding: 5px;
+}
+
+
+
+#main-logo {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  color: var(--secondaryColor);
+}
+
+/*Settings and Logout*/
+
+#button-list nav {
+  justify-content: right;
+   
+}
+
+#button-list li {
+  list-style: none;
+}
+
+#button-list nav ul {
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px; /*space Settings and Logout*/
+
+
+}
+
+#button-list a {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--secondaryColor);
+    background-color: var(--primaryColor);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px white;
+
+}
+
+#button-list a:hover {
+    text-decoration: none;
+    color: var(--primaryColor);
+    background-color: white;
+    
+
+}
