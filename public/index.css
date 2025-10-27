@@ -1,8 +1,26 @@
+/*Global CSS File*/
 body {
   background: rgb(116, 84, 116);
 }
 
-h1 {
+#content {
+  display:flex;
+  flex-direction: row;
+  min-height:100vh;
+  margin:auto;
+  width:80%;
+}
+
+.main-content {
+  padding:10px;
+  background:rgba(255,255,255,.6);
   
 }
 
+
+
+@media screen and (min-width: 768px) {
+  .columns {
+    display:flex;
+  }
+}

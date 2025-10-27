@@ -1,15 +1,20 @@
 import {Outlet} from "react-router-dom";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation"; //  add the ..  to get out of the pages folder
+import "./css/Layout.css"
 
 const Layout = () => {
     return (
         <>
             <Header />
-            <Navigation />
-            
-
-            <Outlet />
+            <div className = "app-shell">
+                <aside className = "sidebar">
+                    <Navigation />
+                </aside>
+                <main className = "main-content">
+                    <Outlet />
+                </main>
+            </div>
             <p>My footer</p>
         </>
 

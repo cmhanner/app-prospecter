@@ -1,0 +1,41 @@
+/*Layout CSS Controls Navigation and Content*/
+
+body { background: rgb(116, 84, 116); }
+
+/* two-column shell under the header */
+.app-shell {
+  display: flex;
+  width: 100vw;
+  
+}
+
+/* left sidebar */
+.sidebar {
+  align-self: flex-start;
+  position: sticky;     /* keep in view on scroll */
+  top: 0;               /* sticks under the header */
+}
+
+/* right main content */
+.main-content {
+  flex: 1 1 auto;
+  padding: 16px;
+  background: rgba(255,255,255,.6);
+  border-radius: 8px;
+ 
+}
+
+/* footer just for spacing */
+.footer { 
+    padding: 16px 0; 
+}
+
+/* responsive: stack on small screens */
+@media (max-width: 768px) {
+  .app-shell { 
+        flex-direction: column; 
+    }
+  .sidebar { 
+        position: static; width: 100%; 
+    }
+}
