@@ -6,7 +6,10 @@ const Navigation = () => {
         <nav id = "main-nav">
             <ul>
                 <li><Link to = "/">Home</Link></li>
-                <li><Link to = "/about">About</Link></li>
+                <li><Link to = "/Database">Database</Link></li>
+                <li><Link to = "/AddEdit">AddEdit</Link></li>
+                <li><Link to = "/List">List</Link></li>
+                <li><Link to = "/About">About</Link></li>
             </ul>
 
         </nav>

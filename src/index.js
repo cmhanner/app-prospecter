@@ -4,25 +4,31 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import Layout from './Layout';
 import Home from './pages/Home';
+import Database from './pages/Database';
+import AddEdit from './pages/AddEdit';
+import List from './pages/List';
 import About from './pages/About';
 
 export default function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />}/>
-          <Route path="About" element={<About />}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+   <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <Routes>
+    <Route path="/" element={<Layout />}>
+      <Route index element={<Home />}/>
+      <Route path = "database" element = {<Database />}/>
+      <Route path="addedit" element={<AddEdit />}/>
+      <Route path="list" element={<List />}/>
+      <Route path="about" element={<About />}/>
+    </Route>
+  </Routes>
+</BrowserRouter>
   );
 };
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1>App Propsecter</h1>
+    <App />
   </React.StrictMode>
 );
 

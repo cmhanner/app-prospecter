@@ -1,10 +1,15 @@
-import "./../css/Header.css";
+import "../css/Header.css";
+import logo from "../images/logo.svg"
+console.log('Header mounted');
+
+
 
 const Header = () => {
     return (
         <header id = "main-header">
-            <button id="hamburger">☰</button>
+            <button id="hamburger" aria-label = "Open Menu">☰</button>
             <h2 id = "Title">Home</h2>
+
                 <div id = "search-bar-part">
                     <form id = "search-bar" action = "#" method = "get">
                         <button type = "submit" >🔍</button>
@@ -13,7 +18,7 @@ const Header = () => {
                 </div>
 
                 <h1 id = "main-logo">
-                   <img src="images/logo.svg" alt="App Prospecter Logo" id="main-logo-img"/> 
+                   <img id="main-logo-img" src={logo} alt= "App Prospecter Logo" /> 
                    App Prospecter
                </h1>
 
@@ -26,7 +31,7 @@ const Header = () => {
                         </ul>
                     </nav>
                 </div>
-                
+
         </header>
 
     );
