@@ -1,0 +1,176 @@
+#main-area {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   /* justify-content: space-evenly; */
+   /* padding: 20px; */
+   flex-wrap: wrap;
+   
+   
+}
+
+#why-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+   
+    /* gap: 100px; */
+    background: rgb(168, 139, 139);
+
+
+}
+
+#answer-area {
+    /* flex: 1;  */
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background-color: var(--secondaryColor);
+    padding: 20px;
+    font-weight: bold;
+}
+
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 20px;
+ 
+}
+
+#dashboard-search {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+
+#dashboard-search form {
+  background-color: var(--secondaryColor);
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--primaryColor);
+  
+}
+
+#dashboard-search input {
+   width: 300px;
+  font-size: 18px;
+  padding: 10px;
+  
+}
+
+
+#dashboard-apps ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 0;
+  
+}
+
+#dashboard-apps li {
+  display: block;
+  background-color: grey;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--primaryColor);
+   box-shadow: 0 2px 5px #0E0F33;
+  
+}
+
+#dashboard-apps li:hover {
+  background-color: white;
+}
+
+.dashboard-apps a {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  text-decoration: none;
+  color: black;
+}
+
+.dashboard-apps a:hover {
+  background-color: white;
+}
+
+.app-overview {
+  background-color: var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  
+}
+
+.app-overview img {
+  border-radius: 8px;
+  background-color: var(--primaryColor);
+  padding: 10px;
+}
+
+.app-name {
+  font-weight: bold;
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.app-company {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.app-ratings {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/*Dashboard List*/
+
+.dashboard-list ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  
+
+}
+
+.dashboard-list li {
+  flex: 1;
+  background-color: grey;
+  border-radius: 10px;
+  border: 2px solid var(--primaryColor);
+   box-shadow: 0 2px 5px #0E0F33;
+   gap: 20px;
+
+}
+
+.dashboard-list a {
+  display: block;
+  /* height: 100%;
+  width: 100%; */
+  text-decoration: none;
+  color: black;
+  padding: 40px;
+
+}
+
+.dashboard-list a:hover {
+  background-color: var(--thirdColor);
+
+}
