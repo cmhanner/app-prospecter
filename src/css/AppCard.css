@@ -1,0 +1,35 @@
+:root {
+    --cardBackground: rgb(93, 88, 88);
+    --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+
+}
+
+.app-card {
+    background-color: var(--cardBackground);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px; 
+    padding: 12px;
+    width: 200px;
+   
+    
+}
+
+
+
+.app-card_header {
+    background-color: var(--primaryColor);
+}
+
+.app-card_title {
+    background-color: var(--secondaryColor);
+}
+
+.app-card_info {
+    background-color: var(--secondaryColor);
+}
+

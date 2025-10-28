@@ -1,4 +1,5 @@
 import "./../css/Home.css"
+import AppCard from "../components/AppCard";
 
 const Home = () => {
     return (
@@ -21,10 +22,12 @@ const Home = () => {
 
                         <div id = "dashbord">
                             
-                            <div id="dashboard-apps">
-                                
-                            
-                            
+                            <div className="dashboard-apps">
+                                <ul>
+                                    <li><a href = "#"><AppCard app = {{name: "Bank App", company: "Da Bank", stars: 2 }} /></a></li>
+                                    <li><a href = "#"><AppCard app = {{name: "Business App", company: "Business Bank", stars: 3 }}/></a></li>
+                                    <li><a href = "#"><AppCard app = {{ name: "Car App", company: "Vroom Vroom", stars: 4 }} /></a></li>
+                                </ul>
                             </div>
 
                             <div id ="dashboard-list">
