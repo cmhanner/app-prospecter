@@ -1,6 +1,7 @@
 import {Outlet} from "react-router-dom";
 import Header from "./components/Header";
 import Navigation from "./components/Navigation"; //  add the ..  to get out of the pages folder
+import Footer from "./components/Footer";
 import "./css/Layout.css"
 
 const Layout = () => {
@@ -15,7 +16,7 @@ const Layout = () => {
                     <Outlet />
                 </main>
             </div>
-            <p>My footer</p>
+            <Footer />
         </>
 
 

@@ -1,0 +1,15 @@
+:root {
+  --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+    
+}
+
+#main-footer {
+    background:var(--primaryColor);
+    color:var(--secondaryColor);
+    text-align:center;
+    padding:2.5px;
+    border-radius:0px 0px 5px 5px;
+}
