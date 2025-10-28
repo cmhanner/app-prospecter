@@ -45,3 +45,12 @@
 .table-style tr:nth-child(even) { 
   background-color: var(--secondaryColor);
 }
+
+/*My laptop is 1466*/
+@media only screen and (max-width: 1500px) {
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

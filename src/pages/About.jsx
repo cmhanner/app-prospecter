@@ -30,15 +30,15 @@ const About = () => {
                     <h2>Contact Me</h2>
                    {/* <form method="POST" id="contact-form">
 
-                        <input type="hidden" name="access_key" value="40d318c9-bd7c-4c6c-8fd2-7105ac775eaa">
+                        <input type="hidden" name="access_key" value="40d318c9-bd7c-4c6c-8fd2-7105ac775eaa" />
 
                         <p>
                             <label for = "name">Name: </label>
-                           <input type="text" name="name" required> 
+                           <input type="text" name="name" required /> 
                         </p>
                         <p>
                             <label for = "email">Email: </label>
-                            <input type="email" name="email" required>
+                            <input type="email" name="email" required />
                         </p>
                         <p>
                             <label for = "message">Message: </label>
@@ -46,7 +46,7 @@ const About = () => {
 
                         </p>
                         
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
                         <button id = "contact-submit-btn"type="submit">Submit Form</button>
 
@@ -55,8 +55,8 @@ const About = () => {
                     </form> */}
                         
                      <h3>Reach Out On:</h3>
-                    {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> */}
-                    {/* <div id = "social-nav">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> 
+                     <div id = "social-nav">
                             <nav>
                                 <ul>
                                     <a href="https://github.com/cmhanner" class="fa fa-github"></a>
@@ -66,7 +66,7 @@ const About = () => {
                     </div>
 
                     
-                    <h3>Location</h3>
+                    {/* <h3>Location</h3>
                     <iframe id = "map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2144.41405522519!2d-81.02837616394099!3d33.992473532161256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f8bad802732f5f%3A0x60f4b6c054539cae!2s1118%20Blossom%20St%2C%20Columbia%2C%20SC%2029201!5e0!3m2!1sen!2sus!4v1760586454549!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
 
 

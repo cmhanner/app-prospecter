@@ -22,6 +22,7 @@ body {
 /* two-column shell under the header */
 .app-shell {
   display: flex;
+  /* justify-content: space-evenly; */
   width: 100vw;
   /* height: 100vh; */
   
