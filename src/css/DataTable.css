@@ -6,12 +6,21 @@
     
 }
 
+.table-wrap {
+    display: flex;
+    height: fit-content;
+}
+
 .table-style  {
    width: 100%;
    max-width: 100%;
    margin: 20px auto;
    box-shadow: 0 2px 5px #0E0F33;
     
+}
+
+.table-style img {
+    width: fit-content;
 }
 
 .table-style th, td {
@@ -26,6 +35,11 @@
    background-color: var(--primaryColor);
    color: var(--secondaryColor);
    
+}
+
+.row-actions {
+  display: flex;
+  flex-direction: column;
 }
 
 .table-style tr:nth-child(even) { 

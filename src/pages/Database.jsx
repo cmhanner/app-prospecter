@@ -9,16 +9,14 @@ const SAMPLE_APPS = [
     {img: appImage, name: "Car App", company: "Vroom Broom", rating: 3, industry: "Automotive", dev: "Car Code Guys" },
     {img: appImage, name: "Food App", company: "The Dine", rating: 1, industry: "Food", dev: "Bytes" },
     {img: appImage, name: "Fitness App", company: "Strong Folk", rating: 5, industry: "Fitness", dev: "Foundational Code" },
-    {img: appImage, name: "Shopping App", company: "Shoppy Stuff", rating: 4, industry: "Retail", dev: "Broken Windows" },
-    {img: appImage, name: "Travel App", company: "Coast 2 Coast", rating: 3, industry: "Travel", dev: "Pointer Maps" },
-    {img: appImage, name: "Bank App", company: "Da Bank", rating: 1, industry: "Finance", dev: "WeDvelop" },
+   
 
 ]
 
 const Database = () => {
     
     return (
-        <main id = "main-area" className = "main-content">
+        <main id = "database" className = "main-content">
             <section>
                 <Filter />
                 <DataTable rows = {SAMPLE_APPS} />

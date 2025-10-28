@@ -1,0 +1,29 @@
+:root {
+  --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+    
+}
+
+.List-Info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 5px;
+    border-top: 2px solid var(--primaryColor);
+  border-left: 2px solid var(--primaryColor);
+  border-right: 2px solid var(--primaryColor);
+  border-bottom: 2px solid var(--primaryColor);
+  box-shadow: 0 2px 5px var(--primaryColor);
+}
+
+h2, h3 {
+    color: black;
+    background-color: var(--secondaryColor);
+    padding: 5px;
+    border-radius: 5px;
+}
