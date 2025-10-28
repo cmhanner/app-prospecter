@@ -1,0 +1,36 @@
+:root {
+  --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+    
+}
+
+#search-bar {
+  background-color: var(--secondaryColor);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px white;
+  
+    
+}
+
+.Search {
+    gap: 10px;
+}
+
+#search-bar input {
+   width: 300px;
+   font-size: 14px;
+  padding: 5px;
+  border-radius: 5px;
+  
+    
+}
+
+#search-bar button {
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+  font-size: 14px;
+  padding: 5px;
+}

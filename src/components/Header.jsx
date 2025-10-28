@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import "../css/Header.css";
 import logo from "../images/logo.svg"
+import Search from "./Search";
 console.log('Header mounted');
 
 //  Got this from AI to change the name of the page in the header 
@@ -45,12 +46,13 @@ export default function Header() {
             <button id="hamburger" aria-label = "Open Menu">☰</button>
             <h2 id = "Title">{title}</h2>
 
-                <div id = "search-bar-part">
+                <Search />
+                {/* <div id = "search-bar-part">
                     <form id = "search-bar" action = "#" method = "get">
                         <button type = "submit" >🔍</button>
                         <input type = "text" placeholder = "app name..." />
                     </form>
-                </div>
+                </div> */}
 
                 <h1 id = "main-logo">
                    <img id="main-logo-img" src={logo} alt= "App Prospecter Logo" /> 

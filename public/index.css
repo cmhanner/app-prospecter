@@ -9,8 +9,11 @@ body {
   display: flex;
   padding:10px;
   background:rgba(255,255,255,.6);
+  gap: 10px;
   
 }
+
+
 
 
 
