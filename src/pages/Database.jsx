@@ -1,8 +1,30 @@
+import "./../css/Database.css"
+import DataTable from "../components/DataTable";
+import appImage from "../images/app-placement-image.jpg";
+import Filter from "../components/Filter";
+
+const SAMPLE_APPS = [
+    {img: appImage, name: "Bank App", company: "Da Bank", rating: 2, industry: "Finance", dev: "WeDvelop" },
+    {img: appImage, name: "Business App", company: "Busy Business", rating: 2, industry: "Consulting", dev: "Busy Bees Develop" },
+    {img: appImage, name: "Car App", company: "Vroom Broom", rating: 3, industry: "Automotive", dev: "Car Code Guys" },
+    {img: appImage, name: "Food App", company: "The Dine", rating: 1, industry: "Food", dev: "Bytes" },
+    {img: appImage, name: "Fitness App", company: "Strong Folk", rating: 5, industry: "Fitness", dev: "Foundational Code" },
+    {img: appImage, name: "Shopping App", company: "Shoppy Stuff", rating: 4, industry: "Retail", dev: "Broken Windows" },
+    {img: appImage, name: "Travel App", company: "Coast 2 Coast", rating: 3, industry: "Travel", dev: "Pointer Maps" },
+    {img: appImage, name: "Bank App", company: "Da Bank", rating: 1, industry: "Finance", dev: "WeDvelop" },
+
+]
+
 const Database = () => {
+    
     return (
-        <div>
-            <h1>Database</h1>
-        </div>
+        <main id = "main-area" className = "main-content">
+            <section>
+                <Filter />
+                <DataTable rows = {SAMPLE_APPS} />
+            </section>
+            
+        </main>
 
     );
 

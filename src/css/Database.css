@@ -1,0 +1,11 @@
+:root {
+  --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+    
+}
+
+section {
+    display: flex;
+}

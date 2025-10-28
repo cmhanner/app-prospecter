@@ -3,15 +3,10 @@ body {
   background: rgb(116, 84, 116);
 }
 
-#content {
-  display:flex;
-  flex-direction: row;
-  min-height:100vh;
-  margin:auto;
-  width:80%;
-}
+
 
 .main-content {
+  display: flex;
   padding:10px;
   background:rgba(255,255,255,.6);
   

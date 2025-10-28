@@ -1,0 +1,42 @@
+.filter {
+  background-color: rgb(154, 149, 149);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  box-shadow: 0 2px 5px #0E0F33;
+  height: fit-content;
+}
+
+.filter label {
+  font-weight: bold;
+  text-align: center;
+  
+}
+
+.filter option {
+  background-color: var(--secondaryColor);
+  
+}
+
+.db-sort {
+    background-color: var(--secondaryColor);
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    flex-direction: column;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    gap: 10px; 
+    border-top: 2px solid var(--primaryColor);
+    border-left: 2px solid var(--primaryColor);
+    border-right: 2px solid var(--primaryColor);
+    border-bottom: 2px solid var(--primaryColor);
+    box-shadow: 0 2px 5px #0E0F33;
+
+}
+
+.db-sort label {
+  text-align: center;
+}
