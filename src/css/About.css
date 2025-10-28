@@ -1,0 +1,121 @@
+:root {
+  --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+    
+}
+
+#contact {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+/* Make each column take up 1/3 of the row */
+#contact > div {
+  flex: 1;
+  padding: 15px;
+  
+}
+
+#contact h2 {
+  text-align: center;
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+  padding: 10px;
+   border: 2px solid var(--primaryColor);
+  border-radius: 5px;
+}
+
+#contact img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+  border: 2px solid var(--primaryColor);
+  border-radius: 10px;
+  box-shadow:0 2px 5px var(--secondaryColor);
+}
+
+#contact p {
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  padding: 5px;
+   border: 2px solid var(--primaryColor);
+  border-radius: 10px;
+  box-shadow:0 2px 5px var(--secondaryColor);
+}
+
+.Why {
+    background-color: rgb(190, 189, 189);
+}
+
+.About-Me {
+    background-color: rgb(134, 134, 134);
+
+}
+
+.Feedback {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(90, 89, 89);
+  text-align: center;
+ 
+}
+
+.Feedback textarea {
+  width: 300px;
+}
+
+#contact-submit-btn {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  
+}
+
+#contact-submit-btn:hover {
+  background-color: var(--thirdColor);
+  
+}
+
+
+
+#contact-result {
+  display: none;
+  color: black;
+  font-weight: bold;
+  background-color: var(--secondaryColor);
+  padding: 10px;
+  width: fit-content;
+  border: 2px var(--primaryColor);
+  border-radius: 5px;
+}
+
+#map {
+  border: 2px var(--secondaryColor);
+  border-radius: 5px;
+  width: 500px;
+  height: 500px;
+  background-color: var(--primaryColor);
+  padding: 2px;
+}
+
+.Feedback #social-nav a {
+   display: flex;
+   flex-direction: column;
+}
+
+
+.Feedback #social-nav a {
+   text-decoration: none;
+   font-size: 40px;
+   color: black;
+}
+
+.Feedback #social-nav a:hover {
+   color:white;
+}
