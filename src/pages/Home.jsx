@@ -1,10 +1,12 @@
 import "./../css/Home.css"
 import AppCard from "../components/AppCard";
+import SavedList from "../components/SavedList";
+
 
 const Home = () => {
     return (
         
-            <main id = "main-area" className = "main-content">
+            <main id = "home" className = "main-content">
                         <div id = "why-header">
                             <h2>Why App Prospecter?</h2>
                             <h2 id = "slogan">You find your next App Deal</h2>
@@ -31,6 +33,7 @@ const Home = () => {
                             </div>
 
                             <div id ="dashboard-list">
+                                <SavedList />
                                 
                                 
                             </div>
