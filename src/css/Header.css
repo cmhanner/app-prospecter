@@ -64,7 +64,7 @@ body {
 
 #Title {
   background-color: var(--secondaryColor);
-  flex: 0 0 150px;
+ 
   padding: 10px 10px;
   text-align: center;
   border-radius: 5px;
@@ -144,4 +144,15 @@ body {
     background-color: white;
     
 
+}
+
+@media (max-width: 768px) {
+  #main-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #Title {
+    height: fit-content;
+  }
 }

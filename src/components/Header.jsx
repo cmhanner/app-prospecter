@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import "../css/Header.css";
 import logo from "../images/logo.svg"
 import Search from "./Search";
-console.log('Header mounted');
+
 
 //  Got this from AI to change the name of the page in the header 
 

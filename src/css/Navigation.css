@@ -5,10 +5,9 @@
     height: auto;
     width: fit-content; */
     border:var(--pageBorder);
-    min-width: 200px;
-    max-width: 240px;
-    flex: 0 0 220px;
-    max-height: max-content;
+    
+    height: 100vh;
+    
 }
 
 #page-changer ul {
@@ -48,4 +47,30 @@
    text-decoration: none;
    color: white;
    background: #2f4908;
+}
+
+@media (max-width: 768px) {
+
+  nav #page-changer {
+    
+    width: 100vw;
+  }
+
+  #page-changer {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    width: 100vw;
+    
+
+  }
+
+  #page-changer ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+   
+  }
+
+  
 }
