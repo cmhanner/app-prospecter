@@ -119,3 +119,40 @@
 .Feedback #social-nav a:hover {
    color:white;
 }
+
+@media (max-width: 768px) {
+  #About {
+    align-items: center;
+  }
+  #contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #contact > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    align-items: center;
+  }
+
+  #map {
+    width: 100%;
+  }
+
+  .Feedback #social-nav a {
+   display: flex;
+   flex-direction: column;
+}
+
+  .Feedback #social-nav a {
+   font-size: 50px;
+  }
+
+}

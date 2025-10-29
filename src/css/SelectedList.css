@@ -27,3 +27,15 @@ h2, h3 {
     padding: 5px;
     border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+  .List-Info {
+    gap: 10px;
+    align-items: center;
+  }
+
+  textarea {
+    width: 200px;
+    height: 100px;
+  }
+}

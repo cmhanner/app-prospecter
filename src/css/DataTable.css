@@ -48,6 +48,27 @@
 
 /*My laptop is 1466*/
 @media only screen and (max-width: 1500px) {
+  .table-style {
+    width: 90%;
+  }
+
+  .table-style th {
+    
+    font-size: 10px;
+    align-items: center;
+   padding: 5px;
+    width: 100%;
+    
+  }
+
+  .table-style td {
+    
+    font-size: 10px;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    
+  }
 
   img {
     max-width: 100%;
@@ -98,7 +119,7 @@
   }
 
   .table-style td::before {
-    content: attr(data-label); /* adds heading before cell content*/
+    
     font-weight: bold;
     margin: 3px;
   }

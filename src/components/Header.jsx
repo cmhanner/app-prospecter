@@ -18,21 +18,20 @@ const TITLES = {
 
 // Normalize the pathname so it matches our keys
 function routeKey(pathname) {
-  const base = (process.env.PUBLIC_URL || "").replace(/\/+$/, ""); // e.g. "/app-prospecter"
+  const base = (process.env.PUBLIC_URL || "").replace(/\/+$/, "");
   let p = pathname;
 
-  // strip basename if present (case-insensitive)
   if (base && p.toLowerCase().startsWith(base.toLowerCase())) {
     p = p.slice(base.length) || "/";
   }
 
-  // lowercase, remove trailing slash
   p = p.toLowerCase().replace(/\/+$/, "");
-  if (p === "") p = "/";
 
-  // use only the first segment for lookup: "/", "/database", etc.
-  const firstSeg = "/" + p.split("/").filter(Boolean)[0];
-  return firstSeg === "/" ? "/" : firstSeg;
+  // ✅ handle "/" early
+  if (p === "" || p === "/") return "/";
+
+  const parts = p.split("/").filter(Boolean);
+  return `/${parts[0]}`; // e.g. "/database", "/addedit", etc.
 }
 
 
