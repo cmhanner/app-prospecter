@@ -9,3 +9,18 @@
 section {
     display: flex;
 }
+
+@media (max-width: 768px) {
+  #database .main-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+

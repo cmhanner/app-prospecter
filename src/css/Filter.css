@@ -40,3 +40,7 @@
 .db-sort label {
   text-align: center;
 }
+
+.Tools {
+  height: fit-content;
+}
