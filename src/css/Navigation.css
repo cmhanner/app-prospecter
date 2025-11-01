@@ -49,6 +49,24 @@
    background: #2f4908;
 }
 
+
+#page-changer .hide-small {
+    display:none;
+   
+}
+
+#page-changer.collapsed {
+  width: 90px;
+}
+
+#toggle-nav {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  
+ 
+}
+
 @media (max-width: 768px) {
 
   nav #page-changer {
