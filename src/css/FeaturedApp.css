@@ -1,0 +1,55 @@
+:root {
+  --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+    
+}
+
+section.featured-apps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header.featured-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+div.controls {
+    display: flex;
+    gap: 10px;
+
+}
+
+div.controls button {
+    cursor: pointer;
+
+
+}
+
+div.controls button:hover {
+    background-color: var(--thirdColor);
+}
+
+.featured-dots {
+    background-color: var(--primaryColor);
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.featured-dots button {
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+.featured-dots button:hover {
+   background-color: var(--thirdColor);
+   
+}

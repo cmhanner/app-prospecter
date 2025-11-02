@@ -1,3 +1,4 @@
+import "./../css/FeaturedApp.css"
 import {useEffect, useState} from "react";
 import AppCard from "../components/AppCard";
 
@@ -23,7 +24,22 @@ import AppCard from "../components/AppCard";
       company: "Vrrom Vroom",
       stars: 2,
       
+    },
+    {
+      id: 4,
+      name: "Trail App",
+      company: "Trail Guys",
+      stars: 2,
+      
+    },
+    {
+      id: 5,
+      name: "Food App",
+      company: "Food Gals",
+      stars: 2,
+      
     }
+
   ];
 
 
