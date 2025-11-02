@@ -90,5 +90,10 @@
    
   }
 
+  a#toggle-nav {
+    height: 75px;
+    width: 75px;
+  }
+
   
 }

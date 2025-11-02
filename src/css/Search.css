@@ -6,6 +6,17 @@
     
 }
 
+.Search {
+
+   align-items: center;
+    gap: 10px;
+}
+
+
+form #search-bar {
+ 
+}
+
 #search-bar {
   background-color: var(--secondaryColor);
   padding: 10px;
@@ -15,9 +26,6 @@
     
 }
 
-.Search {
-    gap: 10px;
-}
 
 #search-bar input {
    width: 300px;
@@ -29,6 +37,7 @@
 }
 
 #search-bar button {
+  width: fit-content;
   background-color: var(--secondaryColor);
   color: var(--primaryColor);
   font-size: 14px;

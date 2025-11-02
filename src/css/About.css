@@ -63,6 +63,7 @@
   flex-direction: column;
   background-color: rgb(90, 89, 89);
   text-align: center;
+  gap: 5px;
  
 }
 
@@ -93,6 +94,55 @@
   width: fit-content;
   border: 2px var(--primaryColor);
   border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-row  label {
+  align-self: flex-start;
+  background-color: var(--primaryColor);
+  color: white;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+ 
+}
+
+.form-row input, textarea {
+    align-self: flex-start;
+
+}
+
+.form-row button {
+  background-color: #d7d7e4;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.form-row button:hover {
+  background-color: var(--thirdColor);
+ 
+}
+
+
+.Feedback span {
+  
+  color: white;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0E0F33;
 }
 
 #map {
@@ -146,10 +196,25 @@
     width: 100%;
   }
 
+  .form-row {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+  }
+
+  .form-row label {
+    padding: 10px;
+  }
+
+  .form-row input, textarea {
+    height: 50px;
+
+  }
+
   .Feedback #social-nav a {
    display: flex;
    flex-direction: column;
-}
+  }
 
   .Feedback #social-nav a {
    font-size: 50px;

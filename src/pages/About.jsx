@@ -1,8 +1,34 @@
 import "./../css/About.css";
+import {useState} from "react";
 import AboutImage from "./../images/About-image.jpg";
 import WhyImage from "./../images/Why-Image.jpg";
 
 const About = () => {
+    const [result, setResult] = useState("");
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(event.target);
+
+        formData.append("access_key", "40d318c9-bd7c-4c6c-8fd2-7105ac775eaa");
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+        setResult("Form Submitted Successfully");
+        event.target.reset();
+        } else {
+        console.log("Error", data);
+        setResult(data.message);
+        }
+    };
+
     return (
         <main id="About" className="main-content">
             
@@ -26,33 +52,27 @@ const About = () => {
                         I'm currently minoring in Business and African American Studies. I enjoy video games, fashion, technology and history.
                     </p>
                 </div>
-                <div class = "Feedback">
+                <div className = "Feedback">
                     <h2>Contact Me</h2>
-                   {/* <form method="POST" id="contact-form">
-
-                        <input type="hidden" name="access_key" value="40d318c9-bd7c-4c6c-8fd2-7105ac775eaa" />
-
-                        <p>
-                            <label for = "name">Name: </label>
-                           <input type="text" name="name" required /> 
-                        </p>
-                        <p>
-                            <label for = "email">Email: </label>
-                            <input type="email" name="email" required />
-                        </p>
-                        <p>
-                            <label for = "message">Message: </label>
-                            <textarea name="message" required></textarea>
-
-                        </p>
                         
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+                        <form onSubmit={onSubmit}>
+                            <div className = "form-row">
+                                <label htmlFor="nameInput">Name: </label>
+                                <input type="text" name="name" required/>
 
-                        <button id = "contact-submit-btn"type="submit">Submit Form</button>
+                                <label htmlFor="emailInput">Email: </label>
+                                <input type="email" name="email" required/>
 
-                        <div id="contact-result"></div>
+                                <label htmlFor="messageInput">Message: </label>
+                                <textarea name="message" required></textarea>
 
-                    </form> */}
+                                <button type="submit">Submit Form</button>
+                            </div>
+
+                        </form>
+                        <span>{result}</span>
+
+                        
                         
                      <h3>Reach Out On:</h3>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" /> 
