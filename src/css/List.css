@@ -11,6 +11,13 @@ section {
     gap: 10px;
 }
 
+@media (max-width: 1175px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 900px) {
   section {
     display: flex;
@@ -18,7 +25,7 @@ section {
     gap: 10px;
   }
 
-  
+
 }
 
 @media (max-width: 768px) {
