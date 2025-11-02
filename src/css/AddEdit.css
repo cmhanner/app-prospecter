@@ -186,6 +186,62 @@
   
 }
 
+@media (max-width: 1200px) {
+  .addEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 75%;
+   
+  }
+
+  .bottom-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section,
+  .list-sidebar {
+   width: 100%;
+   max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .addEdit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 95%;
+   
+  }
+
+  .bottom-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section,
+  .list-sidebar {
+   width: 100%;
+   max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .addEdit {
     display: flex;

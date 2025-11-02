@@ -10,6 +10,18 @@ section {
     display: flex;
 }
 
+@media (max-width: 900px) {
+  #database .main-content {
+    width: 75vw;
+    
+  }
+
+  section {
+   
+  }
+}
+
+
 @media (max-width: 768px) {
   #database .main-content {
     display: flex;
