@@ -1,8 +1,8 @@
 import appDefault from "../images/app-placement-image.jpg";
 import "../css/AppCard.css"
 
-const AppCard = ({ app }) => {
-  const { name, company, stars } = app;
+const AppCard = ({ name, company, stars }) => {
+ 
   return (
     <article className="app-card">
       <header className="app-card_header">
