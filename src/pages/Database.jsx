@@ -1,4 +1,5 @@
 import "./../css/Database.css"
+import {useEffect} from "react";
 import DataTable from "../components/DataTable";
 import appImage from "../images/app-placement-image.jpg";
 import { useApps } from "../hooks/useApps";  //{ } around 
@@ -12,6 +13,8 @@ const Database = () => {
 
     if (loading) return <p>Loading…</p>;
     if (error)   return <p>Couldn't load apps.</p>;
+
+   
     
     return (
         <main id = "database" className = "main-content">

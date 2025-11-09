@@ -15,14 +15,14 @@ const DataTable = ({ rows }) => {
           </tr>
         </thead>
         <tbody>
-          {rows.map(r => ( //  build each table row from povided data in Database and List
-            <tr key={r.id}>
-              <td><img src={r.img} alt="" /></td>
-              <td>{r.name}</td>
-              <td>{r.company}</td>
-              <td>{"★".repeat(r.rating)}</td>
-              <td>{r.industry}</td>
-              <td>{r.dev}</td>
+          {rows.map(row => ( //  build each table row from povided data in Database and List
+            <tr key={row._id}>
+              <td><img src={row.imageUrl} alt={row.name} loading = "lazy"/></td>
+              <td>{row.name}</td>
+              <td>{row.company}</td>
+              <td>{"★".repeat(row.rating)}</td>
+              <td>{row.industry}</td>
+              <td>{row.developer}</td>
               <td>
                 <div className="row-actions">
                   <button>➕</button>
