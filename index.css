@@ -13,7 +13,14 @@ body {
   
 }
 
-
+/*Line only added to keep Food Dining images from breaking */
+img {
+  margin: 0 auto;
+  margin-bottom: 5px;;
+  max-width: 100%; 
+  height: auto; 
+  display: flex; 
+}
 
 
 
