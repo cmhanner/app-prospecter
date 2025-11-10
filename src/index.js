@@ -8,6 +8,8 @@ import Database from './pages/Database';
 import AddEdit from './pages/AddEdit';
 import List from './pages/List';
 import About from './pages/About';
+import AppDetail from "./pages/AppDetail";
+import FeaturedApps from './components/FeaturedApp';
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
   <Routes>
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />}/>
+      <Route path="/" element={<FeaturedApps />} />
+      <Route path="/apps/:id" element={<AppDetail />} />
       <Route path = "database" element = {<Database />}/>
       <Route path="addedit" element={<AddEdit />}/>
       <Route path="list" element={<List />}/>

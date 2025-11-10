@@ -12,6 +12,8 @@ section.featured-apps {
     align-items: center;
 }
 
+
+
 header.featured-header {
     display: flex;
     flex-direction: column;

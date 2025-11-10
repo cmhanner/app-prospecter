@@ -1,0 +1,47 @@
+:root {
+  --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+    
+}
+
+#app_detail {
+  justify-content: center;
+  
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail_header button:hover {
+   background-color: var(--thirdColor);
+}
+
+.detail_back {
+    background: transparent;
+    cursor: pointer;
+}
+
+.detail_top {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail_image {
+    width: 100px;
+    height: 100px;
+}
+
+.detail_section {
+    display: flex;
+    flex-direction: column;
+}

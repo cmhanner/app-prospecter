@@ -1,26 +1,52 @@
 // useApp.jsx
-import { useMemo } from "react";  //  to avoid reusing .find on every render
-import useApps from "./useApps";
+import { useEffect, useMemo, useState } from "react";
+import { useApps } from "./useApps";
 
+export function useApp(id) {
 
-export function useApp(id) { //  takes the id
-   const {data: apps, loading, error} = useApps();  //  calls useApps which is fetching and setting the state of the data
+    //  Get the whole list via the existing App List hook
+  const { data: apps, loading: listLoading, error: listError } = useApps();
 
-   const app = useMemo (
-    () => (
-        apps ? //  if the app array loads
-        apps.find(a => String(a._id) === String (id)) //  true scan the array and return the item that matches
-        : null  // false return null
-    ),
-    [apps, id] //  depedancy arrray
-   );
+  const [single, setSingle] = useState(null); //  will hold the single app IF Fetched from SERVER
+  const [singleLoading, setSingleLoading] = useState(false);  //  tracks loading state
+  const [singleError, setSingleError] = useState(null);
 
-   //  loading is true until apps are feteched
-    const notFound = !loading && apps && !app;
+  // try to find the app in the list first (fastest) checking memory
+  const fromList = useMemo(() => {
+    if (!apps || id == null) return null;
+    const wanted = String(id);
+    return apps.find(a => String(a._id) === wanted) || null;
+  }, [apps, id]);
 
-    return {app, loading, error, notFound};
+  // if not in list (and list finished loading), fetch the single item
+  useEffect(() => {
+    let cancelled = false;
 
-   
+    //  if we already have it from the list, or list is till loading, or no id = do nothing
+    if (fromList || listLoading || id == null) return;
 
+    setSingleLoading(true);
+    setSingleError(null);
 
+    //  Our second option to request from the server
+    fetch(`/api/apps/${id}`)
+      .then(r => (r.ok ? r.json() : Promise.reject(r)))
+      .then(json => { 
+        if (!cancelled) setSingle(json); //  save the fetched app
+
+      })
+      .catch(e => { if (!cancelled) setSingleError(e); 
+
+      })
+      .finally(() => { if (!cancelled) setSingleLoading(false); });
+
+    return () => { cancelled = true; };
+  }, [fromList, listLoading, id]);
+
+  const data = fromList ?? single;  //  where the single app from API is used, if the list from the hook didnt have it
+  const isLoading = listLoading || singleLoading;  //  overall loading is true
+  const error = listError || singleError;  
+  const notFound = !isLoading && !error && !data; //  if nothing is loading, no error, app does not exist
+
+  return { data, isLoading, error, notFound };
 }

@@ -19,6 +19,21 @@
     
 }
 
+.app-card_header img {
+    width: fit-content;
+    height: fit-content;
+}
+
+a.app-card {
+    width: fit-content;
+    
+}
+
+a.app-card:hover {
+    background-color: var(--thirdColor);
+    
+}
+
 
 
 .app-card_header {
