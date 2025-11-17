@@ -186,6 +186,13 @@
   
 }
 
+@media (max-width: 1550px) {
+  .addEdit {
+    display: flex;
+    width: 80vw;
+  }
+}
+
 @media (max-width: 1200px) {
   .addEdit {
     display: flex;

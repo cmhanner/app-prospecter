@@ -7,28 +7,31 @@ import "./../css/AddEdit.css"
 const AddEdit = () => {
 
   const [prevImg, setPrevImg] = useState("");
+  const [result, setResult] = useState("");
 
   const uploadAppImg = (event) => {
-    setPrevImg.apply(URL.createObjectURL(event.target.files[0]));
+    const file = event.target.files[0];
+    setPrevImg(URL.createObjectURL(file));
   }
 
-  const [form, setForm] = useState ({
-    name: "",
-    image: "",
-    company: "",
-    industry: "",
-    rating: "",
-    developer: "",
-    note: "",
+  // const [form, setForm] = useState ({
+  //   name: "",
+  //   image: "",
+  //   company: "",
+  //   industry: "",
+  //   rating: "",
+  //   developer: "",
+  //   note: "",
 
 
-  });
+  // });
 
-  const [result, setResult] = useState("");
+  
 
   const saveApp = async (event) => {
     event.preventDefault();
     setResult("Saving new App...");
+
     const formData = new FormData(event.target);
 
     try {
@@ -44,7 +47,7 @@ const AddEdit = () => {
 
   
 
-    return (
+  return (
   <main id="add-edit" className="main-content">
     <section className="addEdit">
       
@@ -62,25 +65,37 @@ const AddEdit = () => {
           <h3 id="app-name">[App Name]</h3>
 
           <div className="dummy-app-ratio">
-            <img src={appImage} alt="Default app" />
+            <img src={prevImg || appImage}  alt="Default app" />
           </div>
 
-           {/* dont have this in my json */}
-          <form className="desc-form" onSubmit={(e) => e.preventDefault()}>
+           
+          {/* <form className="desc-form" onSubmit={(e) => e.preventDefault()}>
             <label htmlFor="app_description">Description:</label>
             <textarea id="app_description" name="description_text" rows={5} />
             <input type="submit" value="Save" disabled />
           </form>
-        </div>
+        </div> */}
 
-        {/* what im currently adding */}
+       
         <div className="right-section">
           <h3>App Form:</h3>
 
           <form id="app-form" onSubmit={saveApp}>
+
             <div className="form-group">
               <label htmlFor="appName">App Name:</label>
-              <input type="text" id="appName" name="appName" required />
+              <input type="text" id="appName" name="name" required />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="image">App Image:</label>
+              <input
+                type="file"
+                id="image"
+                name="image"
+                accept="image/*"
+                onChange={uploadAppImg}
+              />
             </div>
 
             <div className="form-group">
@@ -94,13 +109,13 @@ const AddEdit = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="rating">Rating:</label>
-              <input type="text" id="rating" name="rating" required />
+              <label htmlFor="rating">Rating (1 - 5):</label>
+              <input type="text" id="rating" name="rating" min="1" max = "5" required />
             </div>
 
             <div className="form-group">
-              <label htmlFor="link">Link to App:</label>
-              <input type="url" id="link" name="link" required />
+              <label htmlFor="rating_count">Rating Count:</label>
+              <input type="text" id="rating_count" name="rating_count" min="1"  required />
             </div>
 
             <div className="form-group">
@@ -108,18 +123,38 @@ const AddEdit = () => {
               <input type="text" id="developer" name="developer" required />
             </div>
 
-            
             <div className="form-group note-block">
               <label htmlFor="note">Note:</label>
               <textarea id="note" name="note" rows={5} />
-              <input type="submit" value="Save Note" disabled />
             </div>
+
+
+
+            <div className="form-group">
+              <label htmlFor="link">App-Store Link:</label>
+              <input type="url" id="link" name="app_store_url" required />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="link">Website of App:</label>
+              <input type="url" id="link" name="website_url" required />
+            </div>
+
+            <button type="submit" className="submit-btn">
+                    Save App
+            </button>
+
+            <p className="status-message" aria-live="polite">
+                    {result}
+            </p>
           </form>
         </div>
-
-        {/* should add edit buttons go here? */}
-
         
+        
+          
+      
+
+      </div> 
         <aside className="list-sidebar" aria-label="Quick actions and lists">
           <h3>Quick Actions</h3>
           <ul>
@@ -135,6 +170,7 @@ const AddEdit = () => {
             <li><a href="#">Custom List</a></li>
           </ul>
         </aside>
+
       </div>
     </section>
   </main>
