@@ -14,20 +14,6 @@ const AddEdit = () => {
     setPrevImg(URL.createObjectURL(file));
   }
 
-  // const [form, setForm] = useState ({
-  //   name: "",
-  //   image: "",
-  //   company: "",
-  //   industry: "",
-  //   rating: "",
-  //   developer: "",
-  //   note: "",
-
-
-  // });
-
-  
-
   const saveApp = async (event) => {
     event.preventDefault();
     setResult("Saving new App...");
