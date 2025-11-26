@@ -27,8 +27,8 @@ export async function addApp (formData) {
     return response.json(); //  return new app from the server
 }
 
-export async function editApp () {
-    const response = await fetch (BASE_URL, {
+export async function editApp (id, formData) {
+    const response = await fetch (`${BASE_URL}/${id}`, {
         method: "PUT",
         body: formData,
     });
@@ -42,10 +42,10 @@ export async function editApp () {
     return response.json();
 }
 
-export async function deleteApp () {
-   const response = await fetch (BASE_URL, {
+export async function deleteApp (id) {
+   const response = await fetch (`${BASE_URL}/${id}`, {
         method: "DELETE",
-        
+         
     });
 
     if (!response.ok) {

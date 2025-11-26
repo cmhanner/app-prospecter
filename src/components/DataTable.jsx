@@ -1,5 +1,68 @@
 import "./../css/DataTable.css"
+import AppOptions from "./AppOptions";
+import React, { useState } from "react";
+import EditApp from "./EditApp";
+import DeleteApp from "./DeleteApp";
+import AppDetail from "../pages/AppDetail";
+import { deleteApp } from "../api/appsApi";
+
 const DataTable = ({ rows }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalAction, setModalAction] = useState(null);
+  const [selectedApp, setSelectedApp] = useState(null);
+
+  function openModal(action, app) {
+    setSelectedApp(app);
+    setModalAction(action);
+    setModalOpen (true);
+  }
+
+  async function doDelete(id) {
+    console.log("Deleting app with id:", id);
+      try {
+        
+        await deleteApp(id);
+
+        //  close the modal and clearing the state
+        setModalOpen(false);
+        setSelectedApp(null);
+        setModalAction(null);
+      } catch (error) {
+        console.error("Error deleting app:", error);
+      }
+  }
+
+  let modalBody = null;
+  if (modalAction === "edit") {
+    modalBody = (
+    <EditApp 
+    app = {selectedApp} 
+    onDone = {() => setModalOpen(false)}
+    
+      /> 
+
+    );
+  }
+  if (modalAction === "delete") {
+    modalBody = (
+    <DeleteApp 
+      app = {selectedApp}
+      onConfirm= {() => doDelete (selectedApp._id)}
+      onCancel = {() => setModalOpen(false)}
+      />
+    );
+
+     
+
+  }
+  if (modalAction === "details") {
+    modalBody = <AppDetail app = {selectedApp} />
+  }
+
+  
+
+ 
+
   return (
     <div className="table-wrap">
       <table className="table-style">
@@ -25,15 +88,30 @@ const DataTable = ({ rows }) => {
               <td>{row.developer}</td>
               <td>
                 <div className="row-actions">
-                  <button>➕</button>
-                  <button>📝</button>
-                  <button>ℹ️</button>
+                 <AppOptions 
+                  app = {row}
+                  onAction = {(action, app) => openModal(action, app)} 
+                 
+                 />
                 </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+        {modalOpen && (
+        <div className="modal-backdrop" onClick={() => setModalOpen(false)}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <button 
+            className="modal-close" 
+            onClick={() => setModalOpen(false)}>
+              ✖
+              
+            </button>
+            {modalBody}
+          </div>
+        </div>
+        )}
     </div>
   );
 };

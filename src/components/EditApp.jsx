@@ -1,7 +1,7 @@
-import { editApp } from "../api/appsApi";
+import { editApp as editAppApi } from "../api/appsApi";
 import React, { useState } from "react";
 
-const EditApp = () => {
+const EditApp = ({app, onDone}) => {
     const [prevImg, setPrevImg] = useState("");
     const [result, setResult] = useState("");
 
@@ -11,17 +11,18 @@ const EditApp = () => {
   
     }
 
-    const editApp = async(event) => {
+    const handleEdit = async(event) => {
         event.preventDefault();
-        setResult()
+        setResult("");
 
         const formData = new FormData(event.target);
     
         try {
-          const saved = await editApp (formData);
+          const saved = await editAppApi (app._id,formData);
           setResult (`"${saved.name}" "edited successfully!`);
+          onDone?.();
         } catch (error) {
-          console.log(error);
+          console.log("Error editing app: ", error);
           setResult("Error: could not edit app.");
         }
 
@@ -30,7 +31,7 @@ const EditApp = () => {
     }
 
     return (
-        <form id="app-form" onSubmit={editApp}>
+        <form id="app-form" onSubmit={handleEdit}>
 
             <div className="form-group">
               <label htmlFor="appName">App Name:</label>
@@ -47,6 +48,8 @@ const EditApp = () => {
                 onChange={uploadAppImg}
               />
             </div>
+
+            {prevImg && <img src ={prevImg} alt = "Preview" />}
 
             <div className="form-group">
               <label htmlFor="company">Company:</label>
@@ -91,11 +94,11 @@ const EditApp = () => {
             </div>
 
             <button type="submit" className="submit-btn">
-                    Save App
+              Save App
             </button>
 
             <p className="status-message" aria-live="polite">
-                    {result}
+              {result}
             </p>
           </form>
     )
