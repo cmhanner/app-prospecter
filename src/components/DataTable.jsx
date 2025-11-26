@@ -6,15 +6,25 @@ import DeleteApp from "./DeleteApp";
 import AppDetail from "../pages/AppDetail";
 import { deleteApp } from "../api/appsApi";
 
-const DataTable = ({ rows }) => {
+const DataTable = ({ rows, onRefresh }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalAction, setModalAction] = useState(null);
   const [selectedApp, setSelectedApp] = useState(null);
+  const [anchorPos, setAnchorPos] = useState (null);
 
-  function openModal(action, app) {
+  function openModal(action, app, buttonLocation) {
     setSelectedApp(app);
     setModalAction(action);
+    setAnchorPos (buttonLocation);
     setModalOpen (true);
+  }
+
+  function closeModal() {
+    setModalOpen(false);
+    setSelectedApp(null);
+    setModalAction(null);
+    setAnchorPos (null);
+
   }
 
   async function doDelete(id) {
@@ -22,6 +32,10 @@ const DataTable = ({ rows }) => {
       try {
         
         await deleteApp(id);
+        //  call parent refresh function to update data
+        if (onRefresh) {
+          await onRefresh();
+        }
 
         //  close the modal and clearing the state
         setModalOpen(false);
@@ -32,12 +46,21 @@ const DataTable = ({ rows }) => {
       }
   }
 
+  async function handleEditSuccess() {
+    if (onRefresh) {
+      await onRefresh();
+    }
+    setModalOpen(false);
+    setSelectedApp(null);
+    setModalAction(null);
+  }
+
   let modalBody = null;
   if (modalAction === "edit") {
     modalBody = (
     <EditApp 
     app = {selectedApp} 
-    onDone = {() => setModalOpen(false)}
+    onDone = {handleEditSuccess}
     
       /> 
 
@@ -90,7 +113,7 @@ const DataTable = ({ rows }) => {
                 <div className="row-actions">
                  <AppOptions 
                   app = {row}
-                  onAction = {(action, app) => openModal(action, app)} 
+                  onAction = {openModal} 
                  
                  />
                 </div>
@@ -101,16 +124,35 @@ const DataTable = ({ rows }) => {
       </table>
         {modalOpen && (
         <div className="modal-backdrop" onClick={() => setModalOpen(false)}>
-          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-            <button 
-            className="modal-close" 
-            onClick={() => setModalOpen(false)}>
-              ✖
-              
-            </button>
-            {modalBody}
+          {modalAction === "delete" && anchorPos && (
+            <div 
+              className="modal-card" 
+              onClick={(e) => e.stopPropagation()}
+                style = {{
+                  position: "fixed",
+                  top: anchorPos.bottom + 8,
+                  left: anchorPos.left,
+                  
+                  
+                }}
+            >
+              <button className = "modal-close" onClick = {closeModal}>✖</button>
+              {modalBody}
+            </div>
+          )}
+
+          {modalAction === "edit" && (
+            <div
+              className = "modal-card centered"
+              onClick = {(e) => e.stopPropagation()}
+            >
+              <button className = "modal-close" onClick = {closeModal}>✖</button>
+              {modalBody}
+              </div>
+          )}
+            
           </div>
-        </div>
+    
         )}
     </div>
   );

@@ -33,9 +33,11 @@ const EditApp = ({app, onDone}) => {
     return (
         <form id="app-form" onSubmit={handleEdit}>
 
+          <h3>Editing {app.name}</h3>
+
             <div className="form-group">
               <label htmlFor="appName">App Name:</label>
-              <input type="text" id="appName" name="name" required />
+              <input type="text" id="appName" name="name"  />
             </div>
 
             <div className="form-group">
@@ -53,27 +55,27 @@ const EditApp = ({app, onDone}) => {
 
             <div className="form-group">
               <label htmlFor="company">Company:</label>
-              <input type="text" id="company" name="company" required />
+              <input type="text" id="company" name="company"  />
             </div>
 
             <div className="form-group">
               <label htmlFor="industry">Industry:</label>
-              <input type="text" id="industry" name="industry" required />
+              <input type="text" id="industry" name="industry"  />
             </div>
 
             <div className="form-group">
               <label htmlFor="rating">Rating (1 - 5):</label>
-              <input type="text" id="rating" name="rating" min="1" max = "5" required />
+              <input type="text" id="rating" name="rating" min="1" max = "5"  />
             </div>
 
             <div className="form-group">
               <label htmlFor="rating_count">Rating Count:</label>
-              <input type="text" id="rating_count" name="rating_count" min="1"  required />
+              <input type="text" id="rating_count" name="rating_count" min="1"   />
             </div>
 
             <div className="form-group">
               <label htmlFor="developer">Developer:</label>
-              <input type="text" id="developer" name="developer" required />
+              <input type="text" id="developer" name="developer"  />
             </div>
 
             <div className="form-group note-block">
@@ -85,12 +87,12 @@ const EditApp = ({app, onDone}) => {
 
             <div className="form-group">
               <label htmlFor="link">App-Store Link:</label>
-              <input type="url" id="link" name="app_store_url" required />
+              <input type="url" id="link" name="app_store_url"  />
             </div>
 
             <div className="form-group">
               <label htmlFor="link">Website of App:</label>
-              <input type="url" id="link" name="website_url" required />
+              <input type="url" id="link" name="website_url"  />
             </div>
 
             <button type="submit" className="submit-btn">

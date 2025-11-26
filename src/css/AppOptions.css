@@ -1,0 +1,21 @@
+:root {
+  --primaryColor: #0E0F33;
+  --secondaryColor: #B8B8D9;
+  --thirdColor: #81B337;
+  --pageChangerO: #416806;
+    
+}
+
+.app-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--thirdColor);
+}

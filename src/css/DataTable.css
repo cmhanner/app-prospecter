@@ -6,6 +6,43 @@
     
 }
 
+
+
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0; /*Places Edit Center in the Screen*/
+  height: fit-content;
+  background-color:  rgba(0, 0, 0, 0.25);
+  
+  border: var(--primaryColor) 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;;
+}
+
+.modal-card {
+  background-color: var(--secondaryColor);
+  border: var(--primaryColor) 2px solid;
+  padding: 10px;
+}
+
+.modal-card.centered {
+  overflow-y: auto; /*to scroll inside edit form, so it dont take up whole screen*/
+  max-height: 99vh;
+}
+
+.modal-card button {
+  margin: 5px;
+  background-color: var(--primaryColor);
+  color: white;
+  cursor: pointer;
+}
+
+.modal-card button:hover {
+  background-color: var(--thirdColor);
+}
+
 .table-wrap {
     display: flex;
     height: fit-content;
@@ -40,6 +77,7 @@
 .row-actions {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .table-style tr:nth-child(even) { 

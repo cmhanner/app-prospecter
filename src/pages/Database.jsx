@@ -9,7 +9,7 @@ import Filter from "../components/Filter";
 
 const Database = () => {
 
-    const {data: apps, loading, error } = useApps(); 
+    const {data: apps, loading, error, reload } = useApps(); 
 
     if (loading) return <p>Loading…</p>;
     if (error)   return <p>Couldn't load apps.</p>;
@@ -20,7 +20,7 @@ const Database = () => {
         <main id = "database" className = "main-content">
             <section>
                 <Filter />
-                <DataTable rows = {apps || []} />
+                <DataTable rows = {apps || []} onRefresh = {reload} />
             </section>
             
         </main>
