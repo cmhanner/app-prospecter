@@ -25,6 +25,7 @@ const DataTable = ({ rows, onRefresh }) => {
 
   function closeModal() {
     setModalOpen(false);
+    setResult("");
     setSelectedApp(null);
     setModalAction(null);
     setAnchorPos (null);
@@ -44,7 +45,7 @@ const DataTable = ({ rows, onRefresh }) => {
         setResult(`"${selectedApp.name}" deleted successfully.`);
 
         //  close the modal and clearing the state
-        closeModal();
+       
       } catch (error) {
         console.error("Error deleting app:", error);
         setResult("Error deleting app");
@@ -57,7 +58,7 @@ const DataTable = ({ rows, onRefresh }) => {
       await onRefresh();
     }
     setResult(`"${selectedApp.name}" deleted successfully.`);
-    closeModal();
+   
 
   }
 
@@ -77,7 +78,7 @@ const DataTable = ({ rows, onRefresh }) => {
     <DeleteApp 
       app = {selectedApp}
       onConfirm= {doDelete}
-      onCancel = {closeModal}
+      // onCancel = {closeModal}
       />
     );
 
@@ -129,28 +130,29 @@ const DataTable = ({ rows, onRefresh }) => {
         </tbody>
       </table>
 
-          {result && (
-      <p className="status-message" aria-live="polite">
-        {result}
-      </p>
-    )}
+    {result && (
+        <p className="status-message" aria-live="polite">
+          {result}
+        </p>
+      )
+    }
 
         {modalOpen && (
         <div className="modal-backdrop" onClick={closeModal}>
-          {modalAction === "delete" && anchorPos && (
+          {modalAction === "delete" &&  (
             <div 
               className="modal-card" 
-              onClick={(e) => e.stopPropagation()}
-                style = {{
-                  position: "fixed",
-                  top: anchorPos.bottom + 8,
-                  left: anchorPos.left,
-                }}
-                
-                
+              onClick={(e) => e.stopPropagation()}   
             >
               <button className = "modal-close" onClick = {closeModal}>✖</button>
               {modalBody}
+
+               {result && (
+                    <p className="status-message" aria-live="polite">
+                      {result}
+                    </p>
+                  )
+                }  
             </div>
           )}
 
@@ -161,12 +163,20 @@ const DataTable = ({ rows, onRefresh }) => {
             >
               <button className = "modal-close" onClick = {closeModal}>✖</button>
               {modalBody}
+
+              {result && (
+                    <p className="status-message" aria-live="polite">
+                      {result}
+                    </p>
+                  )
+                }  
             </div>
           )}
-          <p>{result}</p>
-          </div>
+          
+        </div>
     
-        )}
+        )} {/* When Modal is Open */}
+        
     </div>
   );
 };
