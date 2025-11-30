@@ -1,5 +1,6 @@
 import { editApp as editAppApi } from "../api/appsApi";
 import React, { useState } from "react";
+import "./../css/AddEdit.css"
 
 const EditApp = ({app, onDone}) => {
     const [prevImg, setPrevImg] = useState("");
@@ -19,8 +20,10 @@ const EditApp = ({app, onDone}) => {
     
         try {
           const saved = await editAppApi (app._id,formData);
-          setResult (`"${saved.name}" "edited successfully!`);
-          onDone?.();
+          setResult (`"${saved.name} edited successfully!`);
+         if (onDone) {
+          await onDone();
+         }
         } catch (error) {
           console.log("Error editing app: ", error);
           setResult("Error: could not edit app.");
@@ -40,7 +43,7 @@ const EditApp = ({app, onDone}) => {
               <input type="text" id="appName" name="name"  />
             </div>
 
-            <div className="form-group">
+            <div className="form-group app-image">
               <label htmlFor="image">App Image:</label>
               <input
                 type="file"

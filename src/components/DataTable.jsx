@@ -7,10 +7,14 @@ import AppDetail from "../pages/AppDetail";
 import { deleteApp } from "../api/appsApi";
 
 const DataTable = ({ rows, onRefresh }) => {
+  
   const [modalOpen, setModalOpen] = useState(false);
   const [modalAction, setModalAction] = useState(null);
   const [selectedApp, setSelectedApp] = useState(null);
   const [anchorPos, setAnchorPos] = useState (null);
+
+  
+  const [result, setResult] = useState("");
 
   function openModal(action, app, buttonLocation) {
     setSelectedApp(app);
@@ -37,26 +41,28 @@ const DataTable = ({ rows, onRefresh }) => {
           await onRefresh();
         }
 
+        setResult(`"${selectedApp.name}" deleted successfully.`);
+
         //  close the modal and clearing the state
-        setModalOpen(false);
-        setSelectedApp(null);
-        setModalAction(null);
+        closeModal();
       } catch (error) {
         console.error("Error deleting app:", error);
+        setResult("Error deleting app");
       }
   }
 
-  async function handleEditSuccess() {
+  async function handleEditSuccess(id) {
+    console.log("Edited app with id:", id);
     if (onRefresh) {
       await onRefresh();
     }
-    setModalOpen(false);
-    setSelectedApp(null);
-    setModalAction(null);
+    setResult(`"${selectedApp.name}" deleted successfully.`);
+    closeModal();
+
   }
 
   let modalBody = null;
-  if (modalAction === "edit") {
+  if (modalAction === "edit" && selectedApp) {
     modalBody = (
     <EditApp 
     app = {selectedApp} 
@@ -66,19 +72,19 @@ const DataTable = ({ rows, onRefresh }) => {
 
     );
   }
-  if (modalAction === "delete") {
+  if (modalAction === "delete" && selectedApp) {
     modalBody = (
     <DeleteApp 
       app = {selectedApp}
-      onConfirm= {() => doDelete (selectedApp._id)}
-      onCancel = {() => setModalOpen(false)}
+      onConfirm= {doDelete}
+      onCancel = {closeModal}
       />
     );
 
      
 
   }
-  if (modalAction === "details") {
+  if (modalAction === "details" && selectedApp) {
     modalBody = <AppDetail app = {selectedApp} />
   }
 
@@ -122,8 +128,15 @@ const DataTable = ({ rows, onRefresh }) => {
           ))}
         </tbody>
       </table>
+
+          {result && (
+      <p className="status-message" aria-live="polite">
+        {result}
+      </p>
+    )}
+
         {modalOpen && (
-        <div className="modal-backdrop" onClick={() => setModalOpen(false)}>
+        <div className="modal-backdrop" onClick={closeModal}>
           {modalAction === "delete" && anchorPos && (
             <div 
               className="modal-card" 
@@ -132,9 +145,9 @@ const DataTable = ({ rows, onRefresh }) => {
                   position: "fixed",
                   top: anchorPos.bottom + 8,
                   left: anchorPos.left,
-                  
-                  
                 }}
+                
+                
             >
               <button className = "modal-close" onClick = {closeModal}>✖</button>
               {modalBody}
@@ -148,9 +161,9 @@ const DataTable = ({ rows, onRefresh }) => {
             >
               <button className = "modal-close" onClick = {closeModal}>✖</button>
               {modalBody}
-              </div>
+            </div>
           )}
-            
+          <p>{result}</p>
           </div>
     
         )}

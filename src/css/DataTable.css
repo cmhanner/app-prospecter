@@ -28,7 +28,7 @@
 }
 
 .modal-card.centered {
-  overflow-y: auto; /*to scroll inside edit form, so it dont take up whole screen*/
+  overflow-y: auto; /*to scroll inside edit form, so it dont take up whole*/
   max-height: 99vh;
 }
 
@@ -186,7 +186,7 @@
 }
 
 @media (max-width: 768px) {
-  
+ 
 
   .table-style {
     width: fit-content;
@@ -212,10 +212,10 @@
 
   .table-style tr {
     padding: 15px;
-    width:fit-content;
+    width:max-content;
     border: 1px solid black;
     border-radius: 8px;
-    gap: 5px;
+    
   }
 
   .table-style td {
@@ -249,6 +249,12 @@
     width: 200px;
     height: 50px;
     
+  }
+
+  img {
+    max-width: 25%;
+    max-height: 25%;
+    height: auto;
   }
 
 }

@@ -50,7 +50,7 @@ const AddEdit = () => {
         <div className="left-section">
           <h3 id="app-name">[App Name]</h3>
 
-          <div className="dummy-app-ratio">
+          <div className="app-image">
             <img src={prevImg || appImage}  alt="Default app" />
           </div>
 
