@@ -25,6 +25,7 @@
   background-color: var(--secondaryColor);
   border: var(--primaryColor) 2px solid;
   padding: 10px;
+  border-radius: 10px;
 }
 
 .modal-card.centered {
@@ -37,6 +38,7 @@
   background-color: var(--primaryColor);
   color: white;
   cursor: pointer;
+   border-radius: 5px;
 }
 
 .modal-card button:hover {

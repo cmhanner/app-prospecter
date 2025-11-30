@@ -78,7 +78,7 @@ const DataTable = ({ rows, onRefresh }) => {
     <DeleteApp 
       app = {selectedApp}
       onConfirm= {doDelete}
-      // onCancel = {closeModal}
+      onCancel = {closeModal}
       />
     );
 
