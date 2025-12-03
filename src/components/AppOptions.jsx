@@ -13,10 +13,10 @@ const AppOptions = ({app, onAction}) => {
 
   return (
     <div className = "app-options">
-      <button  id = "add-to-list" title = "Add app to List">➕</button>
+      {/* <button  id = "add-to-list" title = "Add app to List">➕</button> */}
       <button onClick={handleClick("delete")} id = "delete-btn" title = "Delete App from Database">➖</button> 
       <button onClick={handleClick("edit")} id = "edit-btn" title = "Edit App">📝</button>
-      <button onClick={handleClick("details")} id = "detail-btn" title = "Details of App">ℹ️</button>
+      {/* <button onClick={handleClick("details")} id = "detail-btn" title = "Details of App">ℹ️</button> */}
     </div>
   );
 };
